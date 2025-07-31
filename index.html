@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pawan Mishra | Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Forum', serif;
+      line-height: 1.6;
+      background: #fff;
+      color: #333;
+    }
+
+    header {
+      height: 100vh;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 15px 30px;
+      background: rgba(0, 0, 0, 0);
+      backdrop-filter: blur(5px);
+      z-index: 10;
+    }
+
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      padding-left: 10px;
+      transition: color 0.3s ease;
+    }
+
+    .navbar a:hover {
+      color: #00ffff;
+      
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      color: #e5f3f8;
+    }
+
+    p {
+      font-size: 1.3rem;
+      color: #00ffff84;
+    }
+    .header-text{
+        padding-left: 120px;
+        padding-right: 120px;
+
+    }
+
+    .container {
+      z-index: 1;
+    }
+
+    
+  </style>
+</head>
+
+<body>
+  <div class="navbar">
+    <div><p style="color: #e8eded;">Find me here</p></div>
+    <div>
+    <a href="https://instagram.com/pawanm_7" target="_blank">Instagram</a>
+    <a href="https://linkedin.com/in/pmbpgc7" target="_blank">LinkedIn</a>
+    <a href="https://medium.com/@pmbpgc" target="_blank">Medium</a>
+    <a href="https://open.spotify.com/user/31mjltl7mb4klshcytebd3jew5pe?si=itDVZ3IlRcWhOLKYEl9Htg " target="_blank">Spotify</a>
+    </div>
+  </div>
+
+  <header id="vanta-bg">
+    <div class="container">
+        <h1 id="nameText"></h1>
+      <p>Full Stack Developer | In-Depth Problem Solver | Creative Thinker
+      
+    </div>
+  </header>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+  <script>
+    VANTA.WAVES({
+      el: "#vanta-bg",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      color: 0x1e2125,
+      shininess: 30,
+      waveHeight: 20,
+      waveSpeed: 1,
+      zoom: 0.8
+    });
+  </script>
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+  </script>
+  
+  
+  <script>
+    const names = [
+      "Pawan Mishra",        
+      "パワン・ミシュラ",   
+      "पवन मिश्रा",        
+    ];
+  
+    let currentName = 0;
+    let currentChar = 0;
+    const nameText = document.getElementById("nameText");
+  
+    function animateName() {
+      const targetName = names[currentName];
+      if (currentChar <= targetName.length) {
+        nameText.textContent = targetName.slice(0, currentChar);
+        currentChar++;
+        setTimeout(animateName, 100);
+      } else {
+        setTimeout(() => {
+          currentChar = 0;
+          currentName = (currentName + 1) % names.length;
+          animateName();
+        }, 1200);
+      }
+    }
+  
+    animateName();
+  </script>
+  
+</body>
+</html>
